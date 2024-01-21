@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px; /* Přidán odstup od okraje pro obsah */
+}
+
+.content {
+    margin: 0 auto; /* Centrování obsahu */
+    max-width: 800px; /* Maximální šířka obsahu */
+}
+
+.content h2 {
+    font-weight: 300;
+    margin-bottom: 1px;
+}
+.back-link {
+    position: absolute; /* Nastaví absolutní pozici */
+    top: 10px; /* Vzdálenost od horní hrany */
+    left: 10px; /* Vzdálenost od levé hrany */
+    color: blue; /* Barva textu */
+    text-decoration: none; /* Odstraní podtržení odkazu */
+}
+
+.sidebar {
+    width: 30px; /* Šířka pruh */
+    height: 100%;
+    background-color: #ADD8E6;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* Styly pro formulář */
+
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start; /* Upraveno na zarovnání vlevo */
+    margin-top: 20px;
+}
+
+label, select, input {
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+}
+
+/* Zvláštní styl pro Select year */
+label {
+    border: none; /* Odstranění rámečku pouze pro label */
+}
+
+/* Styly pro tabulku */
+table {
+    width: 97%;
+    border-collapse: collapse;
+    margin: 6px auto; /* Zarovnání tabulky na střed */
+}
+
+th, td {
+    border: 1px solid #edf0f5;
+    padding: 6px;
+    text-align: center;
+    
+    font-weight: lighter; /* Nastavení tenkého písma */
+}
+
+th {
+    background-color:#ADD8E6 ;
+    color: #FFFFFF;
+}
+
+td {
+    color: #000000; /* Černá barva písma pro výsledky */
+}
+
+/* Styly pro pozadí */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+/*  
+body {
+    background-image: url('B22.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+*/
