@@ -1,6 +1,11 @@
 <?php
-
+/* 
+Třída MinResultAnalysis provádí analýzu a zobrazení min. teplotních dat.
+*/
 class MinResultAnalysis {
+     /*
+    Metoda getTemperatureData získává teplotní data pro vybraný rok nebo vrátí všechna data, pokud není vybrán žádný rok.
+    */
     public function getTemperatureData($selectedYear) {
         /* Zahrnutí souboru s teplotními daty */
         $temperatureData = require 'mindatas.php';
@@ -10,7 +15,7 @@ class MinResultAnalysis {
             return $this->transformData($temperatureData);
         }
 
-        /* Filtruje data pouze pro vybraný rok */
+        /* Filtrování dat pouze pro vybraný rok */
         $filteredData = [];
         foreach ($temperatureData as $dateAbbreviation => $yearTemperature) {
             $year = key($yearTemperature);
@@ -21,7 +26,9 @@ class MinResultAnalysis {
 
         return $this->transformData($filteredData);
     }
-         /* Zobrazení teplotních dat ve formě tabulky */
+         /* 
+    Metoda displayTemperatureData zobrazuje teplotní data ve formě tabulky.
+    */
     public function displayTemperatureData($temperatureData) {
         echo '<table>';
         echo '<tr><th>Month year</th><th>Minimum temperature</th></tr>';
@@ -32,7 +39,9 @@ class MinResultAnalysis {
         }
         echo '</table>';
     }
-        /* Transformování teplotních dat */
+         /* 
+    Privátní metoda transformData transformuje teplotní data do požadovaného formátu.
+    */
     private function transformData($temperatureData) {
         $transformedData = [];
 
