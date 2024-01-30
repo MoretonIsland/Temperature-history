@@ -1,6 +1,11 @@
 <?php
-
+/* 
+Třída AvgResultAnalysis provádí analýzu a zobrazení průměrných teplotních dat.
+*/
 class AvgResultAnalysis {
+     /*
+    Metoda getTemperatureData získává teplotní data pro vybraný rok nebo vrátí všechna data, pokud není vybrán žádný rok.
+    */
     public function getTemperatureData($selectedYear) {
         /* Zahrnutí souboru s teplotními daty */
         $temperatureData = require 'avgdatas.php';
@@ -21,7 +26,9 @@ class AvgResultAnalysis {
 
         return $this->transformData($filteredData);
     }
-        /* Zobrazení teplotních dat ve formě tabulky */
+        /* 
+    Metoda displayTemperatureData zobrazuje teplotní data ve formě tabulky.
+    */
     public function displayTemperatureData($temperatureData) {
         echo '<table>';
         echo '<tr><th>Month year</th><th>Average temperature</th></tr>';
@@ -32,7 +39,9 @@ class AvgResultAnalysis {
         }
         echo '</table>';
     }
-       /* Transformování teplotních dat */
+       /* 
+    Privátní metoda transformData transformuje teplotní data do požadovaného formátu.
+    */
     private function transformData($temperatureData) {
         $transformedData = [];
 
@@ -44,7 +53,9 @@ class AvgResultAnalysis {
 
         return $transformedData;
     }
-         /* Výpočet průměrné teploty ze zadaných teplot */  
+        /* 
+    Privátní metoda calculateAverageTemperature vypočítává průměrnou teplotu ze zadaných teplot.
+    */
     private function calculateAverageTemperature($temperatures) {
         $totalTemperature = array_sum($temperatures);
         $numberOfDays = count($temperatures);
