@@ -3,43 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average temperature - Temperature history</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="chart.js"></script>
-    <script src="chart2.js"></script>   
+    <script src="chart2.js"></script> 
+    <script src="chart7.js"></script> 
 </head>
 
 <style>
 
-canvas {
-    display: block;
-    margin: 60px auto; /* Přidání mezery nad grafy */
-    width: 65vw; /* Nastavení šířky na 60% šířky okna prohlížeče */
-}
+    canvas {
+        display: block;
+        margin: 65px auto; /* Přidání mezery nad grafy */
+        width: 60vw; /* Nastavení šířky na 60% šířky okna prohlížeče */
+        max-height: 400px; /* Maximální výška */
+    }
 
-#yearRange {
-        color:black; /*barva nápisu 1948 - 2023*/
-}
+    #yearRange {
+        color: black; /*barva nápisu 1948 - 2023*/
+    }
 
-#Average {
-   text-decoration: underline; /*podtržení nadpisu h2 */
-}
-.sidebar {
-    background-color:#87CEEB; /* Barva pro postranní panel */
-}
+    #Average {
+        text-decoration: underline; /*podtržení nadpisu h2 */
+    }
 
-th {
-    background-color:#ED2939; /* Barva pro záhlaví tabulky */
-    color: #FFFFFF;
-}
-.back-link {         /* Tlačítko Home - zpět na Home page - umístění vlevo nahoře */
-    position: absolute;
-    top: 10px;
-    left: 50px;
-    color: blue;
-    text-decoration: none;
-}
+    .sidebar {
+        background-color: #87CEEB; /* Barva pro postranní panel */
+    }
 
+    th {
+        background-color: #ED2939; /* Barva pro záhlaví tabulky */
+        color: #FFFFFF;
+    }
+
+    .back-link { /* Tlačítko Home - zpět na Home page - umístění vlevo nahoře */
+        position: absolute;
+        top: 10px;
+        left: 50px;
+        color: blue;
+        text-decoration: none;
+    }    
 </style>
 
 <body>
@@ -87,8 +91,14 @@ $temperatureData = $AvgResultAnalysis->getTemperatureData($selectedYear, $select
 $AvgResultAnalysis->displayTemperatureData($temperatureData);
 ?>
 <!-- Canvas prvek pro graf s identifikátorem (id) -->
-<canvas id="myChart2"></canvas> 
+<canvas id="myChart2"></canvas>
 <canvas id="myChart"></canvas>
+<canvas id="myChart7"></canvas>
+
 <br>
+<?php include 'second-table.html'; ?>
+<br>
+<br>
+<?php include 'third-table.html'; ?>
 </body>
 </html>
